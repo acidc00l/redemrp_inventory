@@ -27,10 +27,7 @@ end)
 
 
 RegisterServerEvent("redemrp:playerLoaded")           --load user inventory to server ram
-AddEventHandler("redemrp:playerLoaded", function() 
-local _source = source                                          
-
-    TriggerEvent('redemrp:getPlayerFromId', _source, function(user)
+AddEventHandler("redemrp:playerLoaded", function(_source, user)
         
         local identifier = user.getIdentifier()                 --get player identifier
         local characterid = user.getSessionVar("charid")        --get player character that is in use
@@ -42,9 +39,6 @@ local _source = source
         MySQL.Async.fetchAll('SELECT name, description, weight, amount, metainfo, imgsrc from character_inventory INNER JOIN items ON items.itemid = character_inventory.itemid WHERE `identifier`=@identifier AND `characterid`=@characterid;', {identifier = identifier, characterid = characterid}, function(result)
             table.insert(inventory,  {identifier = identifier, characterid = characterid, items = result}) -- save player inventory to server ram           
         end)
-        
-
-    end)
 end)
 
 
