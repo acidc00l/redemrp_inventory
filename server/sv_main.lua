@@ -1,6 +1,12 @@
 inventory = {}
 inventoryId = 0
+_version = 2
 
+
+-- Handle database creation/updates
+AddEventHandler("redemrp:updateDatabase", function(cb)
+    cb(GetCurrentResourceName(), _version)
+end)
 
 Citizen.CreateThread(function()
     print("===========================================================================")

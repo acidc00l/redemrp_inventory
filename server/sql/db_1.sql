@@ -36,23 +36,6 @@ CREATE TABLE `character_inventory` (
   `metainfo` text COLLATE utf8mb4_bin NOT NULL DEFAULT '{}'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
---
--- Zrzut danych tabeli `character_inventory`
---
-
-INSERT INTO `character_inventory` (`identifier`, `characterid`, `itemid`, `amount`, `metainfo`) VALUES
-('steam:11000010a43abf1', 1, 1, 12, '{meta:\'test\'}'),
-('steam:11000010a43abf1', 2, 1, 12, '{test=true}'),
-('steam:11000010a43abf1', 2, 2, 2, '{test=true}'),
-('steam:11000010a43abf1', 1, 2, 6, '{}'),
-('steam:11000010f6ed4df', 1, 1, 100, '{}');
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `items`
---
-
 CREATE TABLE `items` (
   `itemid` int(11) NOT NULL,
   `name` varchar(16) COLLATE utf8mb4_bin NOT NULL,
@@ -60,36 +43,3 @@ CREATE TABLE `items` (
   `weight` int(11) NOT NULL DEFAULT 0,
   `imgsrc` varchar(28) COLLATE utf8mb4_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
---
--- Zrzut danych tabeli `items`
---
-
-INSERT INTO `items` (`itemid`, `name`, `description`, `weight`, `imgsrc`) VALUES
-(1, 'Japko', 'Zajebiste japuszko ', 45, 'items/wide-blade-knife.png'),
-(2, 'Kości do gry', 'Można za ich pomocą grać w kości.', 10, 'items/bolas-thrown.png');
-
---
--- Indeksy dla zrzutów tabel
---
-
---
--- Indeksy dla tabeli `items`
---
-ALTER TABLE `items`
-  ADD PRIMARY KEY (`itemid`);
-
---
--- AUTO_INCREMENT dla tabel zrzutów
---
-
---
--- AUTO_INCREMENT dla tabeli `items`
---
-ALTER TABLE `items`
-  MODIFY `itemid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
