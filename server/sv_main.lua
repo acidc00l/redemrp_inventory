@@ -26,8 +26,8 @@ end)
 
 
 
-RegisterServerEvent("redemrp_inventory:playerJoined")           --load user inventory to server ram
-AddEventHandler("redemrp_inventory:playerJoined", function() 
+RegisterServerEvent("redemrp:playerLoaded")           --load user inventory to server ram
+AddEventHandler("redemrp:playerLoaded", function() 
 local _source = source                                          
 
     TriggerEvent('redemrp:getPlayerFromId', _source, function(user)
