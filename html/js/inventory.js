@@ -187,11 +187,11 @@ var grids = [   new Muuri('.box0', {dragEnabled: true, dragSort: () => grids, dr
 
 
 function hide(){
-    document.body.style.visibility = 'hidden';
+    document.body.style.display = 'none';
 }
 
 function show(left = true, middle = false, right = false){
-    document.body.style.visibility = 'inherit';
+    document.body.style.display = 'inline';
     document.getElementsByClassName('box0')[0].style.visibility = (left) ? 'inherit' : 'hidden';
     document.getElementsByClassName('box1')[0].style.visibility = (middle) ? 'inherit' : 'hidden';
     document.getElementsByClassName('box2')[0].style.visibility = (right) ? 'inherit' : 'hidden';
