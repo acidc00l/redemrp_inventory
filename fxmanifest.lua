@@ -13,6 +13,7 @@ server_scripts {
 
 files{
 'html/inventory.html',
+'html/crock.ttf',
 'html/js/jquery-1.4.1.min.js',
 'html/js/jquery-func.js',
 'html/js/jquery.jcarousel.pack.js',
